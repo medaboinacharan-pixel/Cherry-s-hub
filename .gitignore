@@ -147,3 +147,21 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
+
+
+# Python files
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# VS Code settings
+.vscode/
+
+# Local Cherry's Hub database
+cherrys_hub.db
+*.db-wal
+*.db-shm
+
+# Keep real secrets private
+.env

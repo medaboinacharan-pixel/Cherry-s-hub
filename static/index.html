@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f8fc">
+<title>Cherry's Hub</title>
+<style>
+:root{--bg:#f6f7fb;--card:#fff;--ink:#20243a;--muted:#7c8398;--line:#e7e9f2;--brand:#6558e8;--brand2:#877cf7;--soft:#eeecff;--danger:#c53b55;--shadow:0 14px 40px rgba(31,37,75,.06)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+button,input,textarea,select{font:inherit}button{cursor:pointer}
+.shell{display:grid;grid-template-columns:250px minmax(0,1fr);min-height:100vh}.sidebar{background:#fff;border-right:1px solid var(--line);padding:25px 16px;display:flex;flex-direction:column;gap:26px}
+.brand{display:flex;align-items:center;gap:11px;padding:0 8px}.logo{width:43px;height:43px;border-radius:15px;background:linear-gradient(135deg,#6558e8,#a29aff);display:grid;place-items:center;color:#fff;font-size:23px;box-shadow:0 8px 18px #6558e833}.brand strong{font-size:17px;letter-spacing:-.4px}.brand small{display:block;color:var(--muted);font-size:12px}
+.navlabel{padding:0 12px;color:#a1a6b8;text-transform:uppercase;font-size:10px;font-weight:800;letter-spacing:1.5px;margin-bottom:7px}.nav{display:grid;gap:5px}.nav button{border:0;background:transparent;color:#737a91;text-align:left;padding:11px 13px;border-radius:12px;display:flex;gap:12px;align-items:center}.nav button:hover{background:#f8f7ff}.nav button.active{background:var(--soft);color:var(--brand);font-weight:750}.sidebottom{margin-top:auto;padding:15px;border-radius:17px;background:linear-gradient(145deg,#f0eeff,#faf9ff);font-size:13px;color:#68628e}.sidebottom b{display:block;color:#39316f;margin-bottom:4px}
+main{min-width:0;padding:28px clamp(16px,3vw,42px) 50px;max-width:1500px;width:100%;margin:0 auto}.topbar{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;margin-bottom:26px}.greeting h1{font-size:clamp(24px,3vw,32px);letter-spacing:-1px;margin:0}.greeting p{margin:4px 0 0;color:var(--muted)}.topright{display:flex;align-items:center;gap:10px}.datepill,.avatar{border:1px solid var(--line);background:#fff;border-radius:13px;padding:10px 13px;color:#69718a}.avatar{width:42px;height:42px;padding:0;display:grid;place-items:center;background:#e9e6ff;color:var(--brand);font-weight:800}
+.hero{border-radius:24px;padding:25px 28px;color:#fff;background:linear-gradient(115deg,#5d50d9,#8578f7 65%,#a69cff);display:flex;align-items:center;justify-content:space-between;gap:18px;box-shadow:0 15px 35px #6558e822;margin-bottom:22px;overflow:hidden;position:relative}.hero:after{content:"✦";position:absolute;right:25%;top:-35px;font-size:155px;color:#ffffff14}.hero h2{font-size:23px;margin:0 0 6px;letter-spacing:-.5px}.hero p{margin:0;color:#eeedff;max-width:540px}.hero button{z-index:1;border:0;border-radius:12px;background:#fff;color:#5b4fd2;padding:12px 16px;font-weight:750;white-space:nowrap}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin-bottom:23px}.stat,.panel,.entry{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}.stat{padding:19px 20px}.stat-head{display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:13px}.stat-icon{width:34px;height:34px;border-radius:11px;background:#f0eeff;display:grid;place-items:center;color:var(--brand);font-size:17px}.stat h2{font-size:27px;letter-spacing:-.8px;margin:12px 0 0}.stat small{color:#999fb0}.workspace{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(290px,.8fr);gap:18px;align-items:start}.panel{padding:21px;margin-bottom:18px}.panelhead{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:17px}.panelhead h2{font-size:17px;margin:0;letter-spacing:-.3px}.sub{color:var(--muted);font-size:13px;margin:4px 0 0}.tag{font-size:11px;background:#f0eeff;color:var(--brand);padding:5px 9px;border-radius:999px;font-weight:750}
+input,textarea,select{width:100%;border:1px solid #e2e5ef;background:#fcfcfe;color:var(--ink);border-radius:11px;padding:11px 12px;outline:none;margin-bottom:10px}input:focus,textarea:focus,select:focus{border-color:#a29aff;box-shadow:0 0 0 3px #6558e818}textarea{resize:vertical;min-height:75px}.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.primary{border:0;background:var(--brand);color:white;border-radius:11px;padding:11px 15px;font-weight:750}.primary:hover{background:#5548d7}.secondary{border:1px solid var(--line);background:#fff;color:#5d647b;border-radius:11px;padding:10px 13px}.formfoot{display:flex;gap:9px;flex-wrap:wrap}.entries{display:grid;gap:10px}.entry{padding:15px;box-shadow:none}.entrytop{display:flex;justify-content:space-between;gap:12px;align-items:start}.entry h3{margin:0;font-size:15px;overflow-wrap:anywhere}.entry p{color:var(--muted);margin:7px 0;white-space:pre-wrap;overflow-wrap:anywhere;font-size:13px}.entrymeta{display:flex;gap:8px;flex-wrap:wrap;color:#9399aa;font-size:11px;margin-top:9px}.entryactions{display:flex;gap:6px;align-items:center}.tiny{border:1px solid var(--line);background:white;color:#6d7488;border-radius:8px;padding:6px 9px;font-size:12px}.tiny.danger{color:var(--danger)}.done h3{text-decoration:line-through;color:#9ba0b0}.empty{padding:22px 8px;text-align:center;color:#9298aa;font-size:13px}
+.chatbox{display:flex;flex-direction:column;min-height:370px}.chatmessages{display:flex;flex-direction:column;gap:10px;flex:1;max-height:360px;overflow:auto;padding:4px 1px 12px}.bubble{max-width:92%;padding:11px 13px;border-radius:14px;font-size:13px;white-space:pre-wrap;overflow-wrap:anywhere}.bubble.ai{background:#f1efff;color:#464071;align-self:flex-start;border-bottom-left-radius:5px}.bubble.user{background:#6558e8;color:white;align-self:flex-end;border-bottom-right-radius:5px}.chatform{display:flex;gap:8px;margin-top:8px}.chatform input{margin:0;min-width:0}.chatform button{flex-shrink:0}.suggestions{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 12px}.suggestions button{border:1px solid #e5e2ff;background:#fbfaff;color:#7167c8;border-radius:999px;padding:6px 9px;font-size:11px}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#20243a;color:#fff;padding:11px 15px;border-radius:12px;box-shadow:var(--shadow);display:none;z-index:10}.hidden{display:none!important}
+@media(max-width:950px){.shell{grid-template-columns:1fr}.sidebar{padding:14px 15px;border-right:0;border-bottom:1px solid var(--line);gap:12px}.brand{padding:0 5px}.nav{display:flex;overflow:auto;padding-bottom:3px}.nav button{white-space:nowrap;padding:9px 11px}.navlabel,.sidebottom{display:none}main{padding-top:20px}.workspace{grid-template-columns:1fr}.hero{padding:22px}}
+@media(max-width:560px){.stats{grid-template-columns:1fr}.stat{padding:15px}.hero{align-items:flex-start;flex-direction:column}.row2{grid-template-columns:1fr}.panel{padding:16px}.datepill{display:none}.topbar{margin-bottom:18px}}
+</style>
+</head>
+<body>
+<div class="shell">
+<aside class="sidebar">
+  <div class="brand"><div class="logo">✦</div><div><strong>Cherry's Hub</strong><small>Your life, in sync</small></div></div>
+  <div><div class="navlabel">Workspace</div><nav class="nav" id="nav">
+    <button class="active" data-section="tasks">☑ <span>Tasks</span></button><button data-section="gym">✦ <span>Gym</span></button><button data-section="study">▤ <span>Study</span></button><button data-section="projects">⌘ <span>Projects</span></button><button data-section="notes">▧ <span>Notes</span></button><button data-section="expenses">₹ <span>Expenses</span></button><button data-section="files">↗ <span>Files & links</span></button>
+  </nav></div>
+  <div class="sidebottom"><b>✧ A little progress daily</b>Small steps turn into big results. DPI can help you plan your next step.</div>
+</aside>
+<main>
+  <div class="topbar"><div class="greeting"><h1 id="greeting">Good evening ✨</h1><p id="subtitle">Let's make today count.</p></div><div class="topright"><div class="datepill" id="today"></div><div class="avatar">C</div></div></div>
+  <section class="hero"><div><h2>Meet DPI, your AI companion</h2><p>Your personal helper for study plans, workouts, tasks and staying organized—right inside Cherry's Hub.</p></div><button id="planBtn">✦ Plan my day</button></section>
+  <section class="stats">
+    <div class="stat"><div class="stat-head"><span>Tasks completed</span><span class="stat-icon">✓</span></div><h2 id="taskStat">0 / 0</h2><small>Keep your momentum going</small></div>
+    <div class="stat"><div class="stat-head"><span>Total expenses</span><span class="stat-icon">₹</span></div><h2 id="expenseStat">₹0</h2><small>Your saved spending</small></div>
+    <div class="stat"><div class="stat-head"><span>All entries</span><span class="stat-icon">▦</span></div><h2 id="entryStat">0</h2><small>Everything in one place</small></div>
+  </section>
+  <section class="workspace">
+    <div>
+      <div class="panel"><div class="panelhead"><div><h2 id="sectionTitle">My tasks</h2><p class="sub" id="sectionSub">Capture it, then make it happen.</p></div><span class="tag" id="sectionTag">TASKS</span></div>
+        <form id="entryForm">
+          <input id="title" placeholder="What do you want to remember?" maxlength="120" required>
+          <textarea id="details" placeholder="Add details, links, sets/reps, or notes..."></textarea>
+          <div class="row2"><input id="entryDate" type="date" aria-label="Entry date"><input id="reminderAt" type="datetime-local" aria-label="Reminder time" title="Optional reminder time"></div>
+          <div class="row2"><input id="amount" type="number" min="0" step="0.01" placeholder="Expense amount (₹)"><select id="priority"><option value="normal">Normal priority</option><option value="high">High priority</option></select></div>
+          <div class="formfoot"><button class="primary" type="submit">＋ Add entry</button><button class="secondary" type="button" id="notifyBtn">♧ Enable notifications</button></div>
+        </form>
+      </div>
+      <div class="panel"><div class="panelhead"><div><h2 id="listHeading">Your tasks</h2><p class="sub">Your latest entries</p></div><span class="tag" id="entryCount">0 ITEMS</span></div><div class="entries" id="entries"><div class="empty">Loading your workspace…</div></div></div>
+    </div>
+    <div class="panel chatbox"><div class="panelhead"><div><h2>✦ Talk to DPI</h2><p class="sub">Your friendly AI companion · here to listen and help</p></div><span class="tag" id="aiMode">GEMINI AI</span></div>
+      <div class="suggestions"><button data-prompt="Make a plan for today">Plan today</button><button data-prompt="What tasks are pending?">Pending tasks</button><button data-prompt="Help me study effectively">Study help</button><button data-prompt="Summarize my expenses">Expenses</button></div>
+      <div class="chatmessages" id="messages"><div class="bubble ai">Hey Cherry! ✨ I’m DPI, your AI companion and guide. You can talk to me about what’s on your mind, share a win or a rough day, ask for help, or tell me to add a task. I’ll listen and do my best to respond with care.</div></div>
+      <form id="chatForm" class="chatform"><input id="chatInput" placeholder="Talk to me, Cherry…" maxlength="4000" required><button class="primary" type="submit">Send</button></form>
+      <p class="sub" style="margin-top:10px">Talk naturally with DPI in your preferred language. Share how you feel, ask for guidance, or say something like “Add a task to practise Python tomorrow at 7 PM” will be saved to your Tasks.</p>
+    </div>
+  </section>
+</main>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+const sectionMeta={
+ tasks:{label:"Tasks",sub:"Capture it, then make it happen.",tag:"TASKS"},
+ gym:{label:"Gym",sub:"Track your workouts and progress.",tag:"FITNESS"},
+ study:{label:"Study",sub:"Keep your learning sessions focused.",tag:"LEARNING"},
+ projects:{label:"Projects",sub:"Turn ideas into finished work.",tag:"PROJECTS"},
+ notes:{label:"Notes",sub:"Keep important thoughts close.",tag:"NOTES"},
+ expenses:{label:"Expenses",sub:"Keep an eye on your spending.",tag:"BUDGET"},
+ files:{label:"Files & links",sub:"Save useful resources and links.",tag:"RESOURCES"}
+};
+let active="tasks", entries=[];
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function toast(msg){$("toast").textContent=msg;$("toast").style.display="block";setTimeout(()=>$("toast").style.display="none",2800)}
+function isoToday(){const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`}
+function niceDate(s){if(!s)return "";try{return new Date(s.length===10?s+"T12:00:00":s).toLocaleString(undefined,{dateStyle:"medium",...(s.length>10?{timeStyle:"short"}:{})})}catch{return s}}
+function greeting(){const h=new Date().getHours();$("greeting").textContent=(h<12?"Good morning":h<17?"Good afternoon":"Good evening")+" ✨";$("today").textContent=new Date().toLocaleDateString(undefined,{weekday:"short",month:"short",day:"numeric",year:"numeric"})}
+async function api(url,opts={}){const r=await fetch(url,{headers:{"Content-Type":"application/json",...(opts.headers||{})},...opts});if(!r.ok){let m="Request failed";try{m=(await r.json()).detail||m}catch{}throw new Error(m)}return r.status===204?null:r.json()}
+async function load(){try{entries=await api("/api/entries");render()}catch(e){$("entries").innerHTML='<div class="empty">Could not connect to the backend. Start the app using run_windows.bat.</div>';toast(e.message)}}
+function render(){
+ const list=entries.filter(e=>e.section===active),meta=sectionMeta[active];
+ $("sectionTitle").textContent="My "+meta.label.toLowerCase();$("sectionSub").textContent=meta.sub;$("sectionTag").textContent=meta.tag;$("listHeading").textContent="Your "+meta.label.toLowerCase();$("entryCount").textContent=list.length+" ITEMS";
+ $("amount").classList.toggle("hidden",active!=="expenses");
+ $("nav").querySelectorAll("button").forEach(b=>b.classList.toggle("active",b.dataset.section===active));
+ const tasks=entries.filter(e=>e.section==="tasks");$("taskStat").textContent=tasks.filter(e=>e.done).length+" / "+tasks.length;
+ const total=entries.filter(e=>e.section==="expenses").reduce((s,e)=>s+Number(e.amount||0),0);$("expenseStat").textContent=total.toLocaleString("en-IN",{style:"currency",currency:"INR",maximumFractionDigits:2});$("entryStat").textContent=entries.length;
+ $("entries").innerHTML=list.length?list.map(e=>`<article class="entry ${e.done?"done":""}"><div class="entrytop"><div><h3>${esc(e.title)}</h3>${e.details?`<p>${esc(e.details)}</p>`:""}</div><div class="entryactions">${active==="tasks"?`<button class="tiny" data-toggle="${e.id}" title="Mark complete">${e.done?"Undo":"✓ Done"}</button>`:""}<button class="tiny danger" data-delete="${e.id}">Delete</button></div></div><div class="entrymeta">${e.entry_date?`<span>◷ ${esc(niceDate(e.entry_date))}</span>`:""}${e.reminder_at?`<span>♧ ${esc(niceDate(e.reminder_at))}</span>`:""}${active==="expenses"?`<strong>₹${Number(e.amount||0).toLocaleString("en-IN")}</strong>`:""}${e.done?'<span>✓ Completed</span>':""}</div></article>`).join(""):'<div class="empty">Nothing here yet. Add your first entry above ✨</div>';
+}
+$("nav").addEventListener("click",e=>{const b=e.target.closest("[data-section]");if(!b)return;active=b.dataset.section;render()});
+$("entryDate").value=isoToday();
+$("entryForm").addEventListener("submit",async e=>{
+ e.preventDefault();const title=$("title").value.trim();if(!title)return;
+ const amountText=$("amount").value;const payload={section:active,title,details:$("details").value.trim(),entry_date:$("entryDate").value,reminder_at:$("reminderAt").value,amount:active==="expenses"&&amountText!==""?Number(amountText):null,done:false};
+ if(active==="expenses"&&(amountText===""||payload.amount<0)){toast("Enter a valid expense amount");return}
+ try{const created=await api("/api/entries",{method:"POST",body:JSON.stringify(payload)});entries.unshift(created);$("entryForm").reset();$("entryDate").value=isoToday();render();toast("Saved to Cherry's Hub");scheduleReminder(created)}catch(err){toast(err.message)}
+});
+$("entries").addEventListener("click",async e=>{
+ const del=e.target.closest("[data-delete]");const toggle=e.target.closest("[data-toggle]");
+ try{if(del){await api("/api/entries/"+del.dataset.delete,{method:"DELETE"});entries=entries.filter(x=>x.id!==del.dataset.delete);render();toast("Entry deleted")}
+ if(toggle){const item=entries.find(x=>x.id===toggle.dataset.toggle);if(!item)return;const updated=await api("/api/entries/"+item.id,{method:"PATCH",body:JSON.stringify({done:!item.done})});entries=entries.map(x=>x.id===item.id?updated:x);render()}}
+ catch(err){toast(err.message)}
+});
+let notified=new Set();
+function scheduleReminder(item){if(!item.reminder_at||item.done)return;const time=new Date(item.reminder_at).getTime();const delay=time-Date.now();if(delay<=0||delay>2147480000)return;setTimeout(()=>{if("Notification"in window&&Notification.permission==="granted"&&!notified.has(item.id)){new Notification("Cherry's Hub · DPI",{body:"Reminder: "+item.title});notified.add(item.id)}},delay)}
+$("notifyBtn").addEventListener("click",async()=>{if(!("Notification"in window)){toast("This browser does not support notifications");return}const p=await Notification.requestPermission();toast(p==="granted"?"Notifications enabled":"Notification permission not granted")});
+$("chatForm").addEventListener("submit",e=>{e.preventDefault();sendChat($("chatInput").value)});
+async function sendChat(text){text=text.trim();if(!text)return;const user=document.createElement("div");user.className="bubble user";user.textContent=text;$("messages").appendChild(user);$("chatInput").value="";const waiting=document.createElement("div");waiting.className="bubble ai";waiting.textContent="DPI is thinking…";$("messages").appendChild(waiting);$("messages").scrollTop=$("messages").scrollHeight;
+ try{const result=await api("/api/chat",{method:"POST",body:JSON.stringify({message:text})});waiting.textContent=result.reply;$("aiMode").textContent=result.mode==="gemini"?"GEMINI CONNECTED":"TASK ACTION";if(result.created_entry){entries.unshift(result.created_entry);active="tasks";render();toast("DPI added a task to your Tasks")} }catch(err){waiting.textContent=err.message||"Could not reach Cherry's Hub. Check that the backend and Gemini API are available.";toast(err.message)}$("messages").scrollTop=$("messages").scrollHeight}
+document.querySelectorAll("[data-prompt]").forEach(b=>b.addEventListener("click",()=>sendChat(b.dataset.prompt)));
+$("planBtn").addEventListener("click",()=>sendChat("Make a practical plan for today using my saved tasks, study items and gym notes."));
+async function init(){greeting();await load();try{const hist=await api("/api/chat/history");if(hist.length){$("messages").innerHTML="";hist.forEach(m=>{const d=document.createElement("div");d.className="bubble "+(m.role==="user"?"user":"ai");d.textContent=m.message;$("messages").appendChild(d)});$("messages").scrollTop=$("messages").scrollHeight}}catch{}}
+init();
+</script>
+</body>
+</html>
